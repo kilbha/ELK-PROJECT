@@ -1,0 +1,18 @@
+logstashPipeline:
+  logstash.conf: |
+    input {
+      beats {
+        port => 5044
+      }
+    }
+
+    output {
+      elasticsearch {
+        hosts => ["https://elasticsearch-master:9200"]
+        user => "elastic"
+        password => ZVSZBjVu8wI3jd11
+        ssl => true
+        ssl_certificate_verification => false
+        index => "k8s-logs-%{+YYYY.MM.dd}"
+      }
+    }

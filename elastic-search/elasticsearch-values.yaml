@@ -1,0 +1,13 @@
+replicas: 3
+
+volumeClaimTemplate:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: gp3
+  resources:
+    requests:
+      storage: 20Gi
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
