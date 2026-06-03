@@ -6,6 +6,5 @@ filebeatConfig:
         - /var/log/containers/*.log
 
     output.logstash:
-      hosts: ["logstash-logstash:5044"]
+      hosts: ["logstash-logstash-headless:5044"]
 
-      

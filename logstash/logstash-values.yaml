@@ -8,11 +8,7 @@ logstashPipeline:
 
     output {
       elasticsearch {
-        hosts => ["https://elasticsearch-master:9200"]
-        user => "elastic"
-        password => ZVSZBjVu8wI3jd11
-        ssl => true
-        ssl_certificate_verification => false
+        hosts => ["http://elasticsearch-master:9200"]        
         index => "k8s-logs-%{+YYYY.MM.dd}"
       }
     }

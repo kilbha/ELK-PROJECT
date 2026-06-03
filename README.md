@@ -85,8 +85,11 @@ resources:
 ```bash
 helm install elasticsearch elastic/elasticsearch \
   -n logging \
-  -f elasticsearch-values.yaml --version 7.17.3
+  -f elasticsearch/elasticsearch-values.yaml --version 7.17.3
 ```
+
+
+# THESE ARE NOT NEEDED FOR VERSION 7.17.3
 
 # Get Elasticsearch Password
 
@@ -101,6 +104,8 @@ kubectl get secret elasticsearch-master-credentials \
   -o jsonpath='{.data.password}' | base64 -d
 ```
 user name --- elastic
+
+# UP TO HERE..
 
 ## Install Kibana
 create file kibana-values.yaml
@@ -231,7 +236,7 @@ spec:
 ```
 
 ```bash
-kubectl apply -f logger.yaml
+kubectl apply -f logger/logger.yaml
 ```
 
 ```bash
